@@ -11,6 +11,7 @@ Description Program implements the
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <fstream>
 #include "caesar_cipher.h"
 #include "otp_cipher.h"
 #include "vigenere_cipher.h"
