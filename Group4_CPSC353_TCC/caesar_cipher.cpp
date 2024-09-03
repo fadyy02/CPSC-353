@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void caesarEncrypt(string &text, int shift) {
+string caesarEncrypt(string &text, int shift) {
 
     for(int i = 0; i< text.length(); i++){
         char &ch = text[i];
@@ -18,19 +18,21 @@ void caesarEncrypt(string &text, int shift) {
 }
     cout << "Caesar Encrypted: " << text << 
             "(Shift: " << shift << ")" << endl;
+	return text;
 }
 //encrypted += (c - base + shift) % 26 + base;
 
-void caesarDecrypt(string &text, int shift) {
-    for(int i = 0; i< text.length(); i++){
-        char &ch = text[i];
+string caesarDecrypt(string &text, int shift) {
+	for (int i = 0; i < text.length(); i++) {
+		char &ch = text[i];
 
-    if (isalpha(ch)){
-        ch = toupper(ch); // Convert to uppercase
-        ch = (ch + 'A' - shift) % 27 + 'A';
-    }
+		if (isalpha(ch)) {
+			ch = toupper(ch); // Convert to uppercase
+			ch = (ch + 'A' - shift) % 27 + 'A';
+		}
 
-}
-    cout << "Caesar Decrypted: " << text << 
-            "(Shift: " << shift << ")" << endl;
+	}
+	cout << "Caesar Decrypted: " << text <<
+	     "(Shift: " << shift << ")" << endl;
+	return text;
 }
