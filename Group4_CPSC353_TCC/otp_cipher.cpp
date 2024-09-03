@@ -1,7 +1,18 @@
 #include "otp_cipher.h"
-#include <cctype>
 
 using namespace std;
+
+// Function to generate a random key of the same length as the text
+string generateRandomKey(int length) {
+	string key = "";
+	srand(static_cast<unsigned int>(time(0))); // Seed for randomness
+	for (int i = 0; i < length; ++i) {
+		char randomChar = 'A' + rand() % 26; // Random uppercase letter
+		key += randomChar;
+	}
+	printf("OTP Key: %s", key.c_str());
+	return key;
+}
 
 string otpEncrypt(string text, string key) {
 	string result;
