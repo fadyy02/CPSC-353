@@ -1,0 +1,3 @@
+C:/Users/Steve/Documents/GitHub/CPSC-353/Group4_CPSC353_TCC/cmake-build-debug/CMakeFiles/CPSC_353.dir
+C:/Users/Steve/Documents/GitHub/CPSC-353/Group4_CPSC353_TCC/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Steve/Documents/GitHub/CPSC-353/Group4_CPSC353_TCC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
