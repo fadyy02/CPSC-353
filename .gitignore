@@ -9,3 +9,4 @@ Group4_CPSC353_TCC/cmake-build-debug/.ninja_log
 .idea/workspace.xml
 *.json
 /Group4_CPSC353_TCC/cmake-build-debug
+*.ninja
