@@ -30,15 +30,13 @@ int main() {
 			continue;
 		}
 
-		cout << "Enter cipher (Caesar: 1, Vigenère: 2, OTP: 3): ";
-		cin >> cipher;
 		while (true) {
+			cout << "Enter cipher (Caesar: 1, Vigenere: 2, OTP: 3): ";
+			cin >> cipher;
 			if (cipher == 1 || cipher == 2 || cipher == 3) {
-			break;
+				break;
 			}
-			else {
-				cout << "Invalid cipher. Please enter 1, 2, 3." << endl;
-			}
+			cout << "Invalid cipher. Please enter 1, 2, or 3." << endl;
 		}
 
 		cout << "Enter input text: ";
