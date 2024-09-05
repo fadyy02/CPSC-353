@@ -6,3 +6,4 @@ Group4_CPSC353_TCC/cmake-build-debug/.ninja_log
 *.obj
 *.exe
 *.log
+.idea/workspace.xml
