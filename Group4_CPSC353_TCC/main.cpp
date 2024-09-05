@@ -79,12 +79,12 @@ int main() {
 
 		cout << "Output: " << output << endl;
 
-		// Save to file
+		// Save cipher output to file
 		ofstream cipherFile("ciphertext.txt");
 		cipherFile << output;
 		cipherFile.close();
 
-		// Save to file
+		// Save cipher key to file
 		ofstream keyFile("key_text.txt");
 		keyFile << key;
 		keyFile.close();
