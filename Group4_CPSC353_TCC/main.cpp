@@ -19,7 +19,7 @@ Description Program implements the
 using namespace std;
 
 int main() {
-	int mode, cipher;
+	int mode, cipher, shift;
 	string input, output, key;
 
 	while (true) {
@@ -45,7 +45,6 @@ int main() {
 		for (auto &c : input) c = toupper(c);  // Convert input to uppercase
 
 		if (cipher == 1) {
-			int shift;
 			cout << "Enter shift key (number): ";
 			cin >> shift;
 			if (mode == 1) {
@@ -64,7 +63,7 @@ int main() {
 			}
 		} else if (cipher == 3) {
 			if (mode == 1) {
-				string key = generateRandomKey(input.length());
+				key = generateRandomKey(input.length());
 				output = otpEncrypt(input, key);
 			} else {
 				cout << "Enter key: ";
@@ -85,9 +84,16 @@ int main() {
 		cipherFile.close();
 
 		// Save cipher key to file
-		ofstream keyFile("key_text.txt");
-		keyFile << key;
-		keyFile.close();
+		if (mode != 1) {
+			ofstream keyFile("key_text.txt");
+			keyFile << key;
+			keyFile.close();
+		}
+		else {
+			ofstream keyFile("shift_text.txt");
+			keyFile << shift;
+			keyFile.close();
+		}
 
 		// Ask if user wants to repeat
 		char repeat;

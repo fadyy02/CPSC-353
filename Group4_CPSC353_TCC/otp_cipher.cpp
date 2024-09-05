@@ -38,7 +38,7 @@ string otpEncrypt(const string &text, const string &key) {
 		}
 
 		// Encrypt using modulo 27 (for A-Z and space)
-		int encryptedValue = (textValue + keyValue) % 27;
+                const int encryptedValue = (textValue + keyValue) % 27;
 
 		// Convert encryptedValue back to character (space for 26, A-Z for 0-25)
 		if (encryptedValue == 26) {
