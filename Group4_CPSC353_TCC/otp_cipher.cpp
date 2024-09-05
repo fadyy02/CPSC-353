@@ -21,13 +21,30 @@ string generateRandomKey(const int length) {
 string otpEncrypt(const string &text, const string &key) {
 	string result;
 	for (size_t i = 0; i < text.length(); ++i) {
-		if (isalpha(text[i])) {
-			const char offset = isupper(text[i]) ? 'A' : 'a';
-			const int k = toupper(key[i % key.length()]) - 'A'; // Convert key to int
-			const char c = static_cast<char>(((text[i] - offset + k) % 26) + offset); // Explicit char cast
-			result += c;
+		int textValue, keyValue;
+
+		// Map space to 26 and letters to 0-25
+		if (text[i] == ' ') {
+			textValue = 26;
 		} else {
-			result += text[i];  // Non-alphabet characters are added directly
+			textValue = toupper(text[i]) - 'A';
+		}
+
+		// Map key similarly (treat spaces in the key as well, if applicable)
+		if (key[i % key.length()] == ' ') {
+			keyValue = 26;
+		} else {
+			keyValue = toupper(key[i % key.length()]) - 'A';
+		}
+
+		// Encrypt using modulo 27 (for A-Z and space)
+		int encryptedValue = (textValue + keyValue) % 27;
+
+		// Convert encryptedValue back to character (space for 26, A-Z for 0-25)
+		if (encryptedValue == 26) {
+			result += ' ';
+		} else {
+			result += static_cast<char>('A' + encryptedValue);
 		}
 	}
 	return result;
@@ -36,13 +53,30 @@ string otpEncrypt(const string &text, const string &key) {
 string otpDecrypt(const string &text, const string &key) {
 	string result;
 	for (size_t i = 0; i < text.length(); ++i) {
-		if (isalpha(text[i])) {
-			const char offset = isupper(text[i]) ? 'A' : 'a';
-			const int k = toupper(key[i % key.length()]) - 'A'; // Convert key to int
-			const char c = static_cast<char>(((text[i] - offset - k + 26) % 26) + offset); // Explicit char cast
-			result += c;
+		int textValue, keyValue;
+
+		// Map space to 26 and letters to 0-25
+		if (text[i] == ' ') {
+			textValue = 26;
 		} else {
-			result += text[i];  // Non-alphabet characters are added directly
+			textValue = toupper(text[i]) - 'A';
+		}
+
+		// Map key similarly (treat spaces in the key as well, if applicable)
+		if (key[i % key.length()] == ' ') {
+			keyValue = 26;
+		} else {
+			keyValue = toupper(key[i % key.length()]) - 'A';
+		}
+
+		// Decrypt using modulo 27 (for A-Z and space)
+		int decryptedValue = (textValue - keyValue + 27) % 27;
+
+		// Convert decryptedValue back to character (space for 26, A-Z for 0-25)
+		if (decryptedValue == 26) {
+			result += ' ';
+		} else {
+			result += static_cast<char>('A' + decryptedValue);
 		}
 	}
 	return result;
