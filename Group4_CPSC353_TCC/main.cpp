@@ -80,9 +80,14 @@ int main() {
 		cout << "Output: " << output << endl;
 
 		// Save to file
-		ofstream outFile("ciphertext.txt");
-		outFile << output;
-		outFile.close();
+		ofstream cipherFile("ciphertext.txt");
+		cipherFile << output;
+		cipherFile.close();
+
+		// Save to file
+		ofstream keyFile("key_text.txt");
+		keyFile << key;
+		keyFile.close();
 
 		// Ask if user wants to repeat
 		char repeat;
