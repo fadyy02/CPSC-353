@@ -84,7 +84,7 @@ int main() {
 		cipherFile.close();
 
 		// Save cipher key to file
-		if (mode != 1) {
+		if (cipher != 1) {
 			ofstream keyFile("key_text.txt");
 			keyFile << key;
 			keyFile.close();
