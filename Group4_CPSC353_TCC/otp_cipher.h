@@ -2,14 +2,13 @@
 #ifndef OTP_H
 #define OTP_H
 
-#include <string>
-#include <cctype>
 #include <random>
+#include <string>
 
 using namespace std;
 
 string generateRandomKey(int length);
-string otpEncrypt(string text, string key);
-string otpDecrypt(string text, string key);
+string otpEncrypt(const string &text, const string &key);
+string otpDecrypt(const string &text, const string &key);
 
 #endif
