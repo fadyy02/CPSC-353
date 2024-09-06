@@ -1,13 +1,27 @@
 /*
-Team Members: Fady Youssef, 
-              Tyler Montague,
-              Caedyn Reece,
-              Steve Deibert
-Course: CPSC 353
-Date Submitted: 09/0/2024
-Assignment Name: Three Classical Ciphers
-Description Program implements the 
-*/
+ * Assignment Name: Three Classical Ciphers
+ * Team Members: Fady Youssef, 
+ *             Tyler Montague,
+ *             Caedyn Reece,
+ *             Steve Deibert
+ * Course: CPSC 353
+ * Date Submitted: 09/08/2024
+ * Filename: main.cpp
+ * 
+ * Description: 
+ * This program provides a simple command-line interface for encryption and decryption using three types of ciphers: 
+ * Caesar, Vigenère, and One-Time Pad (OTP). The user is prompted to choose between encryption or decryption 
+ * mode and then select a cipher type. The program then takes input text, applies the selected cipher using the specified key,                   
+ * and outputs the result to both the console and text files. The program allows for repeated encryption/decryption 
+ * operations.
+ * 
+ * Input/Output:
+ * - Prompts user for mode (Encrypt/Decrypt), cipher type, input text, and key (Vigenère and OTP).
+ * - Outputs the result to the console and saves it to a file.
+ * - Saves the encryption/decryption key to a file (Vigenère and OTP).
+ *
+ */
+
 #include <iostream>
 #include <string>
 #include <cctype>
