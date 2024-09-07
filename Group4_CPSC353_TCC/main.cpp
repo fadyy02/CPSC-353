@@ -22,6 +22,8 @@ int main() {
 	int mode, cipher, shift;
 	string input, output, key;
 
+	vigenereTest();
+	
 	while (true) {
 		cout << "Enter mode (1: Encrypt, 2: Decrypt): ";
 		cin >> mode;
