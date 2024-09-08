@@ -6,8 +6,8 @@
 
 using namespace std;
 
-string vigenereEncrypt(string text, string key);
-string vigenereDecrypt(string text, string key);
+string vigenereEncrypt(const string &text, const string &key);
+string vigenereDecrypt(const string &text, const string &key);
 
 void vigenereTest();
 

@@ -15,6 +15,7 @@ Description Program implements the
 #include "caesar_cipher.h"
 #include "otp_cipher.h"
 #include "vigenere_cipher.h"
+#include "util.h"
 
 using namespace std;
 
@@ -45,7 +46,7 @@ void process_cipher(int mode, int cipher) {
     cout << "Enter input text: ";
     cin.ignore(); // Ignore newline character left in buffer
     getline(cin, input);
-    for (auto &c : input) c = toupper(c); // Convert input to uppercase
+    for (auto &c : input) c = static_cast<char>(toupper(c)); // Convert input to uppercase
 
     if (cipher == 1) { // Caesar Cipher
         cout << "Enter shift key (number): ";
@@ -58,7 +59,7 @@ void process_cipher(int mode, int cipher) {
     } else if (cipher == 2) { // Vigenere Cipher
         cout << "Enter key: ";
         cin >> key;
-        for (auto &c : key) c = toupper(c); // Convert key to uppercase
+        for (auto &c : key) c = static_cast<char>(toupper(c)); // Convert key to uppercase
         if (mode == 1) {
             output = vigenereEncrypt(input, key);
         } else {
@@ -66,12 +67,12 @@ void process_cipher(int mode, int cipher) {
         }
     } else if (cipher == 3) { // OTP Cipher
         if (mode == 1) {
-            key = generateRandomKey(input.length());
+            key = generateRandomKey(static_cast<int>(input.length()));
             output = otpEncrypt(input, key);
         } else {
             cout << "Enter key: ";
             cin >> key;
-            for (auto &c : key) c = toupper(c); // Convert key to uppercase
+            for (auto &c : key) c = static_cast<char>(toupper(c)); // Convert key to uppercase
             output = otpDecrypt(input, key);
         }
     }
@@ -99,9 +100,7 @@ void process_cipher(int mode, int cipher) {
 int main() {
     int mode, cipher;
 	char repeat;
-
-    caesarTest();
-    vigenereTest();
+    testCiphers();
 
     while (true) {
         choose_options(mode, cipher);

@@ -11,4 +11,6 @@ string generateRandomKey(int length);
 string otpEncrypt(const string &text, const string &key);
 string otpDecrypt(const string &text, const string &key);
 
+void otpTest();
+
 #endif

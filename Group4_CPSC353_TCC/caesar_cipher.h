@@ -5,8 +5,8 @@
 
 using namespace std;
 
-string caesarEncrypt(string& text, int shift);
-string caesarDecrypt(string& text, int shift);
+string caesarEncrypt(const string & text, int shift);
+string caesarDecrypt(const string & text, int shift);
 
 void caesarTest();
 
