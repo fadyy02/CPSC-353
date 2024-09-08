@@ -42,7 +42,7 @@ string vigenereEncrypt(string text, string key) {
 }
 
 
-//vigeenere decrypt function, does the opposite of encrypt function
+// vigenere decrypt function, does the opposite of encrypt function
 string vigenereDecrypt(string text, string key) {
 	string result;
 
