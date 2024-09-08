@@ -13,4 +13,6 @@ add_executable(CPSC_353
 		otp_cipher.h
 		vigenere_cipher.cpp
 		vigenere_cipher.h
+		Tests/otp_test.cpp
+		cipher_test.cpp
 )
