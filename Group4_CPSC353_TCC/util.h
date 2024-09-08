@@ -6,6 +6,7 @@
 using namespace std;
 
 int charToValue(char ch);
+void testCiphers();
 
 #endif
 
