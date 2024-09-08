@@ -79,15 +79,18 @@ void process_cipher(int mode, int cipher) {
     cout << "Output: " << output << endl;
 	// Save cipher output to file
     ofstream cipherFile("ciphertext.txt");
+    cout << "Cipher saved to file: ciphertext.txt" <<endl;
     cipherFile << output;
     cipherFile.close();
 	// Save cipher key to file
     if (cipher != 1) {
         ofstream keyFile("key_text.txt");
+        cout << "Key saved to file: key_text.txt" <<endl;
         keyFile << key;
         keyFile.close();
     } else {
         ofstream keyFile("shift_text.txt");
+        cout << "Shift saved to file: shift_text.txt" <<endl;
         keyFile << shift;
         keyFile.close();
     }

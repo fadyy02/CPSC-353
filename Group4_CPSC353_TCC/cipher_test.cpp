@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// test vigenere encrypt and decrypt using a known string (from assesment 1)
 void vigenereTest() {
     string text = "jesuits";
     string key = "spo";
@@ -15,6 +16,7 @@ void vigenereTest() {
 
     string encryptVal = vigenereEncrypt(text, key);
 
+    // if it fails either encrypt or decrypt an error message is displayed
     if (encryptVal != expected) {
         cout << "Vigenere encrypt test failed, output: " << encryptVal << endl;
     }

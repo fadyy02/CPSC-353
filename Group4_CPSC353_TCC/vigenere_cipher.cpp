@@ -7,24 +7,29 @@
 
 using namespace std;
 
+// function to properly handle space as a 27th character
 int charToValue(char ch) {
 	if (ch == ' ') {
-		return 26;
+		return 26; // space maps to 26
 	} else {
-		return toupper(ch) - 'A';
+		return toupper(ch) - 'A'; // convert character to uppercase
 	}
 }
 
+// vigenere encryption function
 string vigenereEncrypt(string text, string key) {
 	string result;
 
+	// loop through to encrypt each character in the string
 	for(int i = 0; i < text.length(); i++) {
 		int textValue, keyValue;
 
-		textValue = charToValue(text[i]);
+		textValue = charToValue(text[i]); 
 
+		// mod by the key length in order to repeat through the key if shorter than the input string
 		keyValue = charToValue(key[i % key.length()]);
 
+		// add the value of the key to the text and mod by 27 to map to a different character
 		const int encryptedValue = (textValue + keyValue) % 27;
 		if (encryptedValue == 26) {
 			result += ' ';
@@ -36,9 +41,12 @@ string vigenereEncrypt(string text, string key) {
 	return result;
 }
 
+
+//vigeenere decrypt function, does the opposite of encrypt function
 string vigenereDecrypt(string text, string key) {
 	string result;
 
+	// loop through to decrypt each character in the string
 	for(int i = 0; i < text.length(); i++) {
 		int textValue, keyValue;
 
@@ -57,28 +65,5 @@ string vigenereDecrypt(string text, string key) {
 	return result;
 }
 
-// void vigenereTest() {
-//     string text = "jesuits";
-//     string key = "spo";
-//     string expected = "ATFLXGJ";
 
-//     string encryptVal = vigenereEncrypt(text, key);
-
-//     if (encryptVal != expected) {
-//         cout << "Vigenere encrypt test failed, output: " << encryptVal << endl;
-//     }
-//     else {
-//         cout << "Vigenere encrypt test passed." << endl;
-//     }
-
-
-// 	string decryptVal = vigenereDecrypt(expected, key);
-	
-// 	if (decryptVal != "JESUITS") {
-//         cout << "Vigenere encrypt test failed, output: " << decryptVal << endl;
-//     }
-//     else {
-//         cout << "Vigenere encrypt test passed." << endl;
-//     }
-// }
 
