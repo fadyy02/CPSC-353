@@ -97,6 +97,9 @@ int main() {
     int mode, cipher;
 	char repeat;
 
+    caesarTest();
+    vigenereTest();
+
     while (true) {
         choose_options(mode, cipher);
         process_cipher(mode, cipher);

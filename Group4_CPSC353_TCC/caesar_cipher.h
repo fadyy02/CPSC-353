@@ -8,4 +8,6 @@ using namespace std;
 string caesarEncrypt(string& text, int shift);
 string caesarDecrypt(string& text, int shift);
 
+void caesarTest();
+
 #endif // CAESAR_CIPHER_H

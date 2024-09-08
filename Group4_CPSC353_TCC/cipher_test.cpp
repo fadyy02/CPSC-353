@@ -18,18 +18,11 @@ void vigenereTest() {
     if (encryptVal != expected) {
         cout << "Vigenere encrypt test failed, output: " << encryptVal << endl;
     }
-    else {
-        cout << "Vigenere encrypt test passed." << endl;
-    }
-
 
 	string decryptVal = vigenereDecrypt(expected, key);
 	
 	if (decryptVal != "JESUITS") {
         cout << "Vigenere encrypt test failed, output: " << decryptVal << endl;
-    }
-    else {
-        cout << "Vigenere encrypt test passed." << endl;
     }
 }
 
@@ -37,7 +30,7 @@ void vigenereTest() {
 void caesarTest() {
 	int shift = 3;
     string text = "HELLO WORLD";
-    string expected = "KHOOR ZRUOG";
+    string expected = "KHOORCZRUOG";
 
     string encValue = caesarEncrypt(text, shift);
 	string decValue = caesarDecrypt(expected, shift);
@@ -45,15 +38,11 @@ void caesarTest() {
 
     if (encValue != expected) {
         cout << "Caesar encrypt test failed, output: " << encValue << endl;
-    } else {
-        cout << "Caesar encrypt test passed." << endl;
-    }
+    } 
 
     if (decValue != text) {
         cout << "Caesar decrypt test failed, output: " << decValue << endl;
-    } else {
-        cout << "Caesar decrypt test passed." << endl;
-    }
+    } 
 }
 
 //create otp test
