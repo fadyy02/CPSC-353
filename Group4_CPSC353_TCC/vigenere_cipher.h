@@ -6,7 +6,6 @@
 
 using namespace std;
 
-int charToValue(char ch);
 string vigenereEncrypt(string text, string key);
 string vigenereDecrypt(string text, string key);
 

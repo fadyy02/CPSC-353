@@ -2,15 +2,9 @@
 #include <string>
 #include <cctype>
 #include "caesar_cipher.h"
+#include "util.h"
 using namespace std;
 
-int charToValue(char ch) {
-    if (ch == ' ') {
-        return 26; // Space is mapped to index 0-26
-    } else {
-        return toupper(ch) - 'A'; // Convert character to uppercase
-    }
-}
 
 char valueToChar(int value) {
     if (value == 26) {

@@ -1,4 +1,5 @@
 #include "vigenere_cipher.h"
+#include "util.h"
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -56,28 +57,28 @@ string vigenereDecrypt(string text, string key) {
 	return result;
 }
 
-void vigenereTest() {
-    string text = "jesuits";
-    string key = "spo";
-    string expected = "ATFLXGJ";
+// void vigenereTest() {
+//     string text = "jesuits";
+//     string key = "spo";
+//     string expected = "ATFLXGJ";
 
-    string encryptVal = vigenereEncrypt(text, key);
+//     string encryptVal = vigenereEncrypt(text, key);
 
-    if (encryptVal != expected) {
-        cout << "Vigenere encrypt test failed, output: " << encryptVal << endl;
-    }
-    else {
-        cout << "Vigenere encrypt test passed." << endl;
-    }
+//     if (encryptVal != expected) {
+//         cout << "Vigenere encrypt test failed, output: " << encryptVal << endl;
+//     }
+//     else {
+//         cout << "Vigenere encrypt test passed." << endl;
+//     }
 
 
-	string decryptVal = vigenereDecrypt(expected, key);
+// 	string decryptVal = vigenereDecrypt(expected, key);
 	
-	if (decryptVal != "JESUITS") {
-        cout << "Vigenere encrypt test failed, output: " << decryptVal << endl;
-    }
-    else {
-        cout << "Vigenere encrypt test passed." << endl;
-    }
-}
+// 	if (decryptVal != "JESUITS") {
+//         cout << "Vigenere encrypt test failed, output: " << decryptVal << endl;
+//     }
+//     else {
+//         cout << "Vigenere encrypt test passed." << endl;
+//     }
+// }
 
