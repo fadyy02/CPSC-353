@@ -5,7 +5,7 @@
 
 using namespace std;
 
-   string caesarEncrypt(string& text, int shift);
-   string caesarDecrypt(string& text, int shift);
+string caesarEncrypt(string& text, int shift);
+string caesarDecrypt(string& text, int shift);
 
     #endif // CAESAR_CIPHER_H

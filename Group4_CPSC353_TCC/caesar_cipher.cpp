@@ -2,37 +2,46 @@
 #include <string>
 #include <cctype>
 #include "caesar_cipher.h"
-
 using namespace std;
 
-string caesarEncrypt(string &text, int shift) {
+int charToValue(char ch) {
+    if (ch == ' ') {
+        return 26; // Space is mapped to index 0-26
+    } else {
+        return toupper(ch) - 'A'; // Convert character to uppercase
+    }
+}
 
-    for(int i = 0; i< text.length(); i++){
-        char &ch = text[i];
+char valueToChar(int value) {
+    if (value == 26) {
+        return ' '; // 26 maps back to space
+    } else {
+        return 'A' + value; // Convert character to uppercase
+    }
+}
 
-    if (isalpha(ch)){
-        ch = toupper(ch); // Convert to uppercase
-        ch = (ch -'A' + shift) % 27 + 'A';
+// Encrypts the input text using the Caesar cipher with the given shift
+string caesarEncrypt(string& text, int shift) {
+    string result;
+
+    for (int i = 0; i < text.length(); i++) {
+        int charValue = charToValue(text[i]); //reads throug the text and converts 1 by 1
+        int encValue = (charValue + shift) % 27; //casear encrypt for each char
+        result += valueToChar(encValue);        
     }
 
+    return result;
 }
-    cout << "Caesar Encrypted: " << text << 
-            "(Shift: " << shift << ")" << endl;
-	return text;
-}
-//encrypted += (c - base + shift) % 26 + base;
 
-string caesarDecrypt(string &text, int shift) {
-	for (int i = 0; i < text.length(); i++) {
-		char &ch = text[i];
+// Decrypts the input text using the Caesar cipher with the given shift
+string caesarDecrypt(string& text, int shift) {
+    string result;
 
-		if (isalpha(ch)) {
-			ch = toupper(ch); // Convert to uppercase
-			ch = (ch + 'A' - shift) % 27 + 'A';
-		}
+    for (int i = 0; i < text.length(); i++) {
+        int charValue = charToValue(text[i]);
+        int decValue = (charValue - shift + 27) % 27; //casear decrypt for each char
+        result += valueToChar(decValue);             
+    }
 
-	}
-	cout << "Caesar Decrypted: " << text <<
-	     "(Shift: " << shift << ")" << endl;
-	return text;
+    return result;
 }
